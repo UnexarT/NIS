@@ -28,6 +28,7 @@ def LZW(x):
     last_zeros_len = 0
 
     while N < n:
+        l = 1
         # Условие, что символ в алфавите слов
         if x[N] in c and len(c) > 0:
             cnt = 1  # Счетчик встреченных символов слов в последовательности
@@ -57,8 +58,6 @@ def LZW(x):
         else:
             num = 0
             j = x[N]
-            if N == 0 or len(j) == 1:
-                l = 1
             if N == 0:
                 code_word = binary(x[N])
             else:
